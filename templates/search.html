@@ -1,5 +1,7 @@
-{% extends 'base.html' %} {% block content %}
-  <h3 class="text-uppercase text-warning" style="letter-spacing: 2px">{{ category }}</h3>
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="text-warning" style="letter-spacing: 2px">Search Term - {{ keyword }}</h3>
 
   <div class="row mb-2">
     {% if posts %}
@@ -18,4 +20,5 @@
       <h5 style="margin-left: 1rem;">No Post Found</h5>
     {% endif %}
   </div>
-{% endblock %}
+
+{% endblock content %}
