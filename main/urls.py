@@ -27,9 +27,19 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.home, name="home"),
     path("category/", include("blogs.urls")),
+
+    # View Blog on single page
     path("blogs/view/<slug:slug>/", BlogsView.blogs, name="blogs"),
+
+    # Search
     path('blogs/search/', BlogsView.search, name="search"),
+
+    # Register and Login
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
+
+    # Dashboards
+    path("dashboard/", include('dashboards.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
